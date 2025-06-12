@@ -6,7 +6,7 @@ const ShowNote = ({ note = [], setNotes, alert }) => {
 
   const deleteNote = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/note/deleteNote/${id}`, {
+      await axios.delete(`https://my-note-backend.vercel.app/note/deleteNote/${id}`, {
         withCredentials: true,
       });
 
@@ -25,7 +25,7 @@ const ShowNote = ({ note = [], setNotes, alert }) => {
   const updateNote = async () => {
     try {
       const res = await axios.put(
-        `http://localhost:5000/note/noteEdit/${editNote._id}`,
+        `https://my-note-backend.vercel.app/note/noteEdit/${editNote._id}`,
         {
           title: editNote.title,
           description: editNote.description,

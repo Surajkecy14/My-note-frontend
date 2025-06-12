@@ -9,7 +9,7 @@ export default function LoginAccount({alert}) {
     const submitForm = async(e)=>{
         e.preventDefault(); 
         //  calling api to login
-          const response = await axios.post("http://localhost:5000/auth/loginAccount",{
+          const response = await axios.post("https://my-note-backend.vercel.app/auth/loginAccount",{
             email,
             password
           },{withCredentials:true})

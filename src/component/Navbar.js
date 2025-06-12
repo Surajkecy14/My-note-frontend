@@ -10,7 +10,7 @@ export default function Navbar() {
   useEffect(() => {
     const checkLogin = async () => {
       const response = await axios.get(
-        "http://localhost:5000/auth/isLoggedIn",
+        "https://my-note-backend.vercel.app/auth/isLoggedIn",
         { withCredentials: true }
       );
       if (response.data === "loggedIn") {
@@ -23,7 +23,7 @@ export default function Navbar() {
   }, [location]);
 
 const logout = async () => {
-  await axios.get("http://localhost:5000/auth/logout", {
+  await axios.get("https://my-note-backend.vercel.app/auth/logout", {
     withCredentials: true,
   });
   setLogout(false);      // <-- Update login state here!

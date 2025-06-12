@@ -10,7 +10,7 @@ export default function CreateAccount({alert}) {
   const submitForm = async (e) => {
     e.preventDefault();
    
-   const response = await axios.post("http://localhost:5000/auth/createAccount", {
+   const response = await axios.post("https://my-note-backend.vercel.app/auth/createAccount", {
       name,
       email,
       password,

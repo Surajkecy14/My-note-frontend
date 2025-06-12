@@ -7,7 +7,7 @@ const Profile = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const response = await axios.get("http://localhost:5000/auth/userInfo", {
+      const response = await axios.get("https://my-note-backend.vercel.app/auth/userInfo", {
         withCredentials: true,
       });
       setName(response.data.name);

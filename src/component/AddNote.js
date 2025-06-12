@@ -10,7 +10,7 @@ export default function Addnote({alert}) {
 
   // Fetch notes from backend
   const fetchNotes = async () => {
-    const res = await axios.get("http://localhost:5000/note/getNote", {
+    const res = await axios.get("https://my-note-backend.vercel.app/note/getNote", {
       withCredentials: true,
     });
     setnotes(res.data);
@@ -23,7 +23,7 @@ export default function Addnote({alert}) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios.post(
-      "http://localhost:5000/note/addNote",
+      "https://my-note-backend.vercel.app/note/addNote",
       {
         title,
         description,
@@ -38,7 +38,7 @@ export default function Addnote({alert}) {
   useEffect(() => {
     const checkLogin = async () => {
       const response = await axios.get(
-        "http://localhost:5000/auth/isLoggedIn",
+        "https://my-note-backend.vercel.app/auth/isLoggedIn",
         { withCredentials: true }
       );
       if (response.data === "loggedIn") {
